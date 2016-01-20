@@ -1,13 +1,14 @@
-h1 {
-  font-family: helvetica, serif;
-  color: blue;
+html {
+  font-family: helvetica, sans serif;
+}
+
+h1, h2 {
   text-align: center;
 }
 
 table {
   table-layout: fixed;
   width: 100%;
-  font-family: helvetica, serif;
   font-weight: bold;
   text-align: center;
 }
@@ -19,11 +20,11 @@ img {
 
 .racer_table td {
   overflow: hidden;
-  height: 20%;
-  width: 20%;
+  padding: 1%;
+  border: 2px solid #fff;
 }
 
-td.active p {
+.racer_table td.active p {
   display: none;
 }
 
