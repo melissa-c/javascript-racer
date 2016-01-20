@@ -1,0 +1,28 @@
+h1 {
+  font-family: helvetica, serif;
+  color: blue;
+}
+
+table {
+  font-family: helvetica, serif;
+}
+
+img {
+  height: 58px;
+  width: 58px;
+}
+
+.racer_table td {
+  height: 60px;
+  width: 60px;
+}
+
+#player1_row {
+  color: #fff;
+  background: blue;
+}
+
+#player2_row {
+  color: #fff;
+  background: red;
+}
