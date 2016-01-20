@@ -13,7 +13,7 @@ table {
   text-align: center;
 }
 
-img {
+.racer_table td.active img {
   height: 70px;
   width: 70px;
 }
