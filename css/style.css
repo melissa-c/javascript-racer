@@ -1,20 +1,30 @@
 h1 {
   font-family: helvetica, serif;
   color: blue;
+  text-align: center;
 }
 
 table {
+  table-layout: fixed;
+  width: 100%;
   font-family: helvetica, serif;
+  font-weight: bold;
+  text-align: center;
 }
 
 img {
-  height: 58px;
-  width: 58px;
+  height: 70px;
+  width: 70px;
 }
 
 .racer_table td {
-  height: 60px;
-  width: 60px;
+  overflow: hidden;
+  height: 20%;
+  width: 20%;
+}
+
+td.active p {
+  display: none;
 }
 
 #player1_row {
