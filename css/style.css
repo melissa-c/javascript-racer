@@ -13,15 +13,24 @@ table {
   text-align: center;
 }
 
-.racer_table td.active img {
-  height: 70px;
-  width: 70px;
-}
-
 .racer_table td {
   overflow: hidden;
   padding: 1%;
   border: 2px solid #fff;
+}
+
+.racer_table td img {
+  display: none;
+}
+
+.racer_table td p {
+  display: inline;
+}
+
+.racer_table td.active img {
+  display: inline;
+  height: 70px;
+  width: 70px;
 }
 
 .racer_table td.active p {

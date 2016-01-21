@@ -1,12 +1,15 @@
 // wait until everything on page has loaded
-$("document").ready(function() {
+// shorter version of the same code:
+// $(function() {
+$(document).ready(function() {  
   //run the code
-});
 
+//example:
+  // $("h1").click(function() {
+  //   $(this).hide();
+  // });
 
-function updatePlayerPosition("player1");
-
-$(document).on("keyup", someFunction)
+// function updatePlayerPosition("player1");
 
 
 /*
@@ -14,14 +17,23 @@ Start state = the only active table cells are the first table
 cells in each row.
 */
 
+$('td').removeClass('active');
+$('td:nth-child(1)').addClass('active');
+
+
 /*
-Prompt = 
+Alert = 
 instructions stating the assigned keys to press for each player:
-"Welcome to the Presidential Race for the White House. 
-Press C to move Clinton.
-Press T to move Trump.
-Good luck, 'Merica!"
 */
+
+alert("Welcome to the Presidential Race for the White House.\n\
+  \n\
+  Press C to move Clinton.\n\
+  Press T to move Trump.\n\
+  \n\
+  Good luck, \'Merica!\n\
+  \n");
+
 
 /*
 Assign the keys = 
@@ -29,12 +41,17 @@ player1_row id with table cell class active will be C (keycode 67),
 player2_row id with table cell class active will be T (keycode 84)
 */
 
+
+
 /* 
 When an assigned key is pressed =
 the table cell in the corresponding player's row changes from an 
 active cell to a normal table cell and the next table cell to the 
 right becomes an active cell.
 */
+
+
+// $(document).on("keyup", someFunction)
 
 /*
 When the last table cell in one of the player's rows becomes an active 
@@ -57,3 +74,5 @@ Each alert also states that they can play again.
 The table reverts back to its start state.
 */
 
+
+});
