@@ -1,78 +1,94 @@
 // wait until everything on page has loaded
-// shorter version of the same code:
-// $(function() {
 $(document).ready(function() {  
+/* shorter version of the same code:
+$(function() {  */
+
   //run the code
-
-//example:
-  // $("h1").click(function() {
-  //   $(this).hide();
-  // });
-
 // function updatePlayerPosition("player1");
 
-
 /*
-Start state = the only active table cells are the first table 
-cells in each row.
-*/
-
-$('td').removeClass('active');
-$('td:nth-child(1)').addClass('active');
-
-
-/*
+Start state = 
+Remove active class from all table cells.
+Add active class to the first table cells in each row.
 Alert = 
-instructions stating the assigned keys to press for each player:
+Instructions stating the assigned keys to press for each player.
 */
-
-alert("Welcome to the Presidential Race for the White House.\n\
-  \n\
-  Press C to move Clinton.\n\
-  Press T to move Trump.\n\
-  \n\
-  Good luck, \'Merica!\n\
-  \n");
+var startState = function() {
+  $("td").removeClass("active");
+  $("td:first-child").addClass("active");
+  
+  alert("Welcome to the Presidential Race for the White House.\n\
+    \nPress C to move Clinton.\nPress T to move Trump.\n\
+    \nGood luck, \'Merica!\n\n");
+};
+startState();
 
 
 /*
-Assign the keys = 
-player1_row id with table cell class active will be C (keycode 67), 
-player2_row id with table cell class active will be T (keycode 84)
-*/
+Assign the keys =
+player1 is C (keycode 67),
+player2 is T (keycode 84).
 
-
-
-/* 
 When an assigned key is pressed =
-the table cell in the corresponding player's row changes from an 
-active cell to a normal table cell and the next table cell to the 
-right becomes an active cell.
+Find the active cell in the corresponding player's row.
+Remove the active class from that cell.
+Find the next cell to the right.
+Add the active class to that cell.
 */
 
 
-// $(document).on("keyup", someFunction)
+$(document).on("keyup", function(e){
+
+    if(e.which === 67) {
+    var move1 = $("#player1_row td.active");
+    $(move1).removeClass("active");
+      $(move1).next().addClass("active");
+    };
+
+    if(e.which === 84) {
+    var move2 = $("#player2_row td.active");
+    $(move2).removeClass("active");
+      $(move2).next().addClass("active");
+    };
+
+  });
+
+    
+
 
 /*
-When the last table cell in one of the player's rows becomes an active 
-cell the game ends and the key presses are disabled.
-*/
+Win state =
+When an active cell in a player's row has no more cells to the right.
+Disable key press for the table.
 
-/*
-The player whose row had its last table cell become an active cell 
+Alert =
+The player who had no more table cells to the right of the active cell
 is the winner. 
 */
 
-/*
-Alert = 
-If player1 wins: "Clinton won! Celebrate with the interns!"
-If player2 wins: "Trump won! Find a bunker - the end is nigh!" 
-Each alert also states that they can play again. 
-*/
 
+var winState = function(){
 /*
-The table reverts back to its start state.
+If player1 wins then alert player1 won and play again.
+Else alert player2 won and play again.
 */
+  
+var clintonWon = ("Clinton won! Celebrate with the interns!\n\
+  \nHell, lets race again!\n\n");
+alert(clintonWon);
 
+
+var trumpWon = ("Trump won! Hide in a bunker \- the end is nigh!\n\
+  \nHell, lets race again!\n\n");
+alert(trumpWon);
+
+};
+
+winState();
+
+
+//The table reverts back to its start state.
+
+startState();
 
 });
