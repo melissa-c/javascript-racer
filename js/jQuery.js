@@ -25,7 +25,6 @@ var lengthOfTrack = function(){
       \nThe distance is set to 5.\n\n");
   };
 };
-
 lengthOfTrack();
 
 
@@ -44,13 +43,19 @@ $(document).on("keyup", function(e){
   var nextCell1 = current1.next();
   var nextCell2 = current2.next();
 
+  function reset(){
+    location.reload();
+  };
+
+
   if(e.which === 67) {
     if(nextCell1.length){
       $(current1).removeClass("active");
       $(nextCell1).addClass("active");
     } else {
       alert(p1Won);
-      startState();
+      // startState();
+      reset();
     }
   };
 
@@ -60,11 +65,13 @@ $(document).on("keyup", function(e){
       $(nextCell2).addClass("active");
     } else {
       alert(p2Won);
-      startState();
+      // startState();
+      reset();
     }
   };
 });
 });
+
 
 // wait until everything on page has loaded
 /* shorter version of the same code:
