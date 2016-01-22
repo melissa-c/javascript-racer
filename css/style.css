@@ -8,6 +8,7 @@ h1, h2 {
 
 table {
   table-layout: fixed;
+  min-width: 740px;
   width: 100%;
   font-weight: bold;
   text-align: center;

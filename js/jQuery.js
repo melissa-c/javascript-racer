@@ -1,5 +1,5 @@
-// wait until everything on page has loaded
 $(document).ready(function() {  
+
 var startState = function() {
   $("td").removeClass("active");
   $("td:first-child").addClass("active");
@@ -9,6 +9,26 @@ var startState = function() {
     \nGood luck, \'Murica!\n\n");
 };
 startState();
+
+
+var lengthOfTrack = function(){
+  var input = prompt("Select a racing distance between 5 and 10", 
+  "Type any number between 5 and 10...");
+
+  if(input > 5 || input < 10){
+    for(var i = 5; i < 10; i++){
+      $("#player1_row").append($("#player1_row td:last-child").clone(true));
+      $("#player2_row").append($("#player2_row td:last-child").clone(true));
+    } 
+  } else {
+    alert("You have not selected a correct racing distance.\n\
+      \nThe distance is set to 5.\n\n");
+  };
+};
+
+lengthOfTrack();
+
+
 
 $(document).on("keyup", function(e){
 
@@ -46,6 +66,7 @@ $(document).on("keyup", function(e){
 });
 });
 
+// wait until everything on page has loaded
 /* shorter version of the same code:
 $(function() {
 */
