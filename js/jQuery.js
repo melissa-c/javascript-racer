@@ -15,7 +15,7 @@ var lengthOfTrack = function(){
   var input = prompt("Select a racing distance between 5 and 10", 
   "Type any number between 5 and 10...");
 
-  if(input > 5 || input < 10){
+  if(input > 5 && input < 10){
     for(var i = 5; i < input; i++){
       $("#player1_row").append($("#player1_row td:last-child").clone(true));
       $("#player2_row").append($("#player2_row td:last-child").clone(true));
