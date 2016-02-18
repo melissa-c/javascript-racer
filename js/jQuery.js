@@ -6,9 +6,11 @@ var round1Start = function() {
   $(".round2").addClass("hidden");
 
   alert("Welcome to the Presidential Race for the White House.\n\
-    \nUse your keyboard to move the candidates.\n\n\
-    \nPress C to move Clinton.\n\nPress T to move Trump.\n\n\
-    \nGood luck, \'Murica!\n\n");
+    \nLEVEL 1\n\n\
+    \nUse your keyboard to move the candidates.\n\
+    \nPress C to move Clinton.\n\
+    \nPress T to move Trump.\n\n\
+    \nGood luck, 'Murica!\n\n");
 };
 round1Start();
 
@@ -30,13 +32,11 @@ var lengthOfTrack = function(){
 lengthOfTrack();
 
 
-
-$(document).on("keyup", function(e){
-
+function r1Keys(e1) {
   var p1Won = ("Clinton won!\n\nCelebrate with the interns!\n\n\
     \nHell, lets see what happens in Level 2!\n\n");
 
-  var p2Won = ("Trump won!\n\nHide in a bunker \- the end is nigh!\n\n\
+  var p2Won = ("Trump won!\n\nHide in a bunker - the end is nigh!\n\n\
     \nHell, lets see what happens in Level 2!\n\n");
 
   var current1 = $("#p1 td.active");
@@ -47,43 +47,50 @@ $(document).on("keyup", function(e){
 
 
   //C is 67
-  if(e.which === 67) {
+  if(e1.which === 67) {
     if(nextCell1.length){
       $(current1).removeClass("active");
       $(nextCell1).addClass("active");
     } else {
       alert(p1Won);
-round2Start();
+      round2Start();
       
     }
   };
 
   //T is 84
-  if(e.which === 84) {
+  if(e1.which === 84) {
     if(nextCell2.length){
       $(current2).removeClass("active");
       $(nextCell2).addClass("active");
     } else {
       alert(p2Won);
-round2Start();
+      round2Start();
     }
   };
-});
+};
+$(document).keyup(r1Keys);
 
+//turn off the round 1 keyup events for round 2
 var round2Start = function() {
+  $(document).unbind("keyup", r1Keys);
+
   $("td").removeClass("active");
   $("tr:first-child td:first-child").addClass("active");
-  $(".round1").addClass("hidden");
   $(".round2").removeClass("hidden");
+  $(".round1").addClass("hidden");
 
-  alert("Fight it out with the Dark Horse in Level 2!\n\
-    \nUse your keyboard to move the candidates.\n\n\
-    \nThey must stay within the GREEN squares.\n\n\
-    \nFor Clinton, press H to move her RIGHT,\n\
-    \nand press J to move her DOWN.\n\
-    \n\nFor Sanders, press S to move him RIGHT,\n\
-    \nand press A to move him DOWN.\n\n\
-    \nGood luck, \'Murica!\n\n");
+
+  alert("LEVEL 2!\n\n\Fight it out with the Dark Horse Sanders!\n\
+    \nUse your keyboard to move the candidates.\n\
+    \nEach must stay within their GREEN squares.\n\n\
+    \nFor Clinton:\n\
+    \nPress H to move her RIGHT,\n\
+    \nPress J to move her DOWN.\n\n\
+    \nFor Sanders:\n\
+    \nPress S to move him RIGHT,\n\
+    \nPress A to move him DOWN.\n\n\
+    \nGood luck, 'Murica!\n\n");
 };
 
 //S is 83
