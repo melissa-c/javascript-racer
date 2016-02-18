@@ -2,74 +2,74 @@ html {
   font-family: helvetica, sans serif;
 }
 
-h1, h2 {
+h1, h2, 
+h2.round1,
+h2.round2 {
   text-align: center;
 }
 
-table{
+h2.round1,
+h2.round2 {
+  color: red;
+}
+
+table {
   table-layout: fixed;
   font-weight: bold;
   text-align: center;
 }
 
-#round1 {
+table.round1 {
   width: 100%;
   min-width: 740px;
 }
 
-#round2_p1,
-#round2_p2 {
-  display: inline-block;
+table.round2 {
+  float: left;
   max-width: 360px;
   width: 360px;
 }
 
-#round2_p1 {
-  margin-right: 40px;
+.round2 {
+  margin: 0 40px 40px 0;
 }
 
-#round2_p1 td,
-#round2_p2 td {
+.round2 td {
   background: #262626;
   width: 78px;
+  height: 70px;
 }
 
-#round2_p1 td.path,
-#round2_p2 td.path {
+.round2 td.path {
   background: green; 
 }
-#round1 td,
-#round2_p1 td,
-#round2_p2 td {
+.round1 td,
+.round2 td {
   overflow: hidden;
   padding: 1%;
   border: 2px solid #fff;
 }
 
-#round1 td img,
-#round2_p1 td img,
-#round2_p2 td img {
+.round1 td img,
+.round2 td img {
   display: none;
 }
 
-#round1 td p,
-#round2_p1 td p,
-#round2_p2 td p {
+.round1 td p,
+.round2 td p {
   display: inline;
   color: #fff;
 }
 
-#round1 td.active img,
-#round2_p1 td.active img,
-#round2_p2 td.active img {
+.round1 td.active img,
+.round2 td.active img {
   display: inline;
   height: 70px;
   width: 70px;
 }
 
-#round1 td.active p,
-#round2_p1 td.active p,
-#round2_p2 td.active p {
+.round1 td.active p,
+.round2 td.active p {
   display: none;
 }
 
@@ -77,10 +77,10 @@ table{
   display: none;
 }
 
-#p1_row {
+#p1 {
   background: blue;
 }
 
-#p2_row {
+#p2 {
   background: red;
 }
